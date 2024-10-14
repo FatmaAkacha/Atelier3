@@ -7,12 +7,10 @@
 <div class="container mt-4">
     <h1 class="text-center" style="color: #7CB9E8;">List of students</h1>
 
-    <!-- Formulaire de recherche avec champ de texte pour le nom et liste déroulante pour les écoles -->
     <form class="form-inline my-4" asp-action="Search" asp-controller="Student">
         <div class="input-group">
             <input size="30" placeholder="Type a name" type="search" name="name" class="form-control" />
 
-            <!-- Liste déroulante pour sélectionner une école -->
             <select asp-items="ViewBag.SchoolID" name="schoolid" class="form-select" style="width: 300px;">
                 <option value="">Select a school</option>
             </select>
@@ -22,7 +20,7 @@
     </form>
 
     <p>
-        <a class="btn btn-primary" asp-action="Create">Add a new student</a>
+        <a class="btn btn-primary" asp-action="Create" style="background-color:cadetblue ; border: cadetblue">Add a new student</a>
         <a asp-action="Index" asp-controller="Student" class="btn btn-secondary">All students</a>
     </p>
 

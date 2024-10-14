@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Atelier3.Models;
 using Atelier3.Repositories;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Atelier3.Controllers
 {
+    [Authorize(Roles = "Admin,Manager")]
     public class StudentController : Controller
     {
         private readonly IStudentRepository studentRepository;
@@ -15,7 +17,7 @@ namespace Atelier3.Controllers
             this.studentRepository = studentRepository;
             this.schoolRepository = schoolRepository;
         }
-
+        [AllowAnonymous]
         // GET: StudentController
         public IActionResult Index()
         {
